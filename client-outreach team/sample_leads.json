@@ -1,0 +1,62 @@
+[
+  {
+    "lead_id": "lead-001",
+    "company_name": "Austin Realty Group",
+    "industry": "real estate",
+    "contact_name": "Sarah Johnson",
+    "job_title": "Owner",
+    "email": "sarah@austinrealty.com",
+    "phone": "512-555-0101",
+    "whatsapp_phone": "+15125550101",
+    "website": "https://austinrealtygroup.com",
+    "linkedin_url": "https://linkedin.com/in/sarahjohnson",
+    "location": "Austin, TX",
+    "lead_score": 85,
+    "priority": "High",
+    "source": "lead_generation"
+  },
+  {
+    "lead_id": "lead-002",
+    "company_name": "Capital City Dentists",
+    "industry": "dentist",
+    "contact_name": "Dr. Michael Chen",
+    "job_title": "Dentist",
+    "email": "drchen@capitalcitydental.com",
+    "phone": "512-555-0102",
+    "website": "https://capitalcitydental.com",
+    "location": "Austin, TX",
+    "lead_score": 72,
+    "priority": "High",
+    "source": "lead_generation"
+  },
+  {
+    "lead_id": "lead-003",
+    "company_name": "TechFlow Solutions",
+    "industry": "technology",
+    "contact_name": "David Park",
+    "job_title": "CEO",
+    "email": "david@techflow.io",
+    "phone": "512-555-0103",
+    "linkedin_url": "https://linkedin.com/in/davidpark",
+    "location": "San Francisco, CA",
+    "lead_score": 60,
+    "priority": "Medium",
+    "source": "lead_generation"
+  },
+  {
+    "lead_id": "lead-004",
+    "company_name": "GreenLeaf Landscaping",
+    "industry": "landscaping",
+    "contact_name": "Maria Garcia",
+    "job_title": "Owner",
+    "email": "maria@greenleaf.com",
+    "whatsapp_phone": "+15125550104",
+    "website": "https://greenleaflandscaping.com",
+    "facebook_url": "https://facebook.com/greenleaflandscaping",
+    "instagram_url": "https://instagram.com/greenleaflandscaping",
+    "location": "Miami, FL",
+    "lead_score": 45,
+    "priority": "Low",
+    "source": "lead_generation"
+  }
+]
