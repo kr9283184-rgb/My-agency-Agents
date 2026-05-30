@@ -1,0 +1,2 @@
+[console_scripts]
+lead-gen-master = lead_gen_master.cli:main
