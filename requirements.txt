@@ -1,0 +1,2 @@
+# Runtime dependencies are intentionally standard-library only for the core runtime.
+# Install development tooling with: pip install -r requirements-dev.txt

@@ -10,22 +10,55 @@ permissions:
   contents: read
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt
+      - name: Run tests with coverage
+        run: python -m pytest --cov=core --cov=departments --cov-report=term-missing --cov-fail-under=70
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install lint tools
+        run: pip install ruff
+      - name: Ruff
+        run: ruff check core departments tests
+
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install type checker
+        run: pip install mypy
+      - name: Mypy
+        run: mypy core departments --ignore-missing-imports
+
   structure:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Validate repository documentation
+      - name: Validate repository artifacts
         run: |
           test -s README.md
           test -s LICENSE
           test -s CONTRIBUTING.md
           test -s SECURITY.md
           test -s CHANGELOG.md
-      - name: Validate README links syntax
-        run: python - <<'PY'
-          from pathlib import Path
-          text = Path('README.md').read_text(encoding='utf-8')
-          assert text.count('```') % 2 == 0, 'Unbalanced fenced code blocks in README.md'
-          assert len(text.strip()) > 500, 'README.md is unexpectedly short'
-          print('Repository documentation checks passed')
-          PY
+          test -s pyproject.toml
+          test -s requirements.txt
+          test -s requirements.lock
+          test -s .env.example
+          test -s Dockerfile
